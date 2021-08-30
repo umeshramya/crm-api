@@ -1,15 +1,11 @@
 {
   "name": "hubspot-crm-api",
-  "version": "1.0.1",
+  "version": "1.0.1+f5e6e32b",
   "description": "",
   "main": "lib/index.js",
   "dependencies": {
     "@hubspot/api-client": "^4.1.0",
     "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "@types/request": "^2.48.7",
-    "typescript": "^4.4.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,12 +16,15 @@
     "type": "git",
     "url": "git+https://github.com/umeshramya/crm-api.git"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/umeshramya/crm-api/issues"
   },
-  "homepage": "https://github.com/umeshramya/crm-api#readme"
+  "homepage": "https://github.com/umeshramya/crm-api#readme",
+  "yalcSig": "f5e6e32b09dcdaf44c337ea34db6e817"
 }

@@ -1,1 +1,3 @@
-console.log("umesh")
+import HubspotObjects from "./hubspot/hubspot-objects";
+
+export {HubspotObjects}
