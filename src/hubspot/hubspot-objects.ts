@@ -1,6 +1,6 @@
 // const hubspot = require('@hubspot/api-client');
-import hubspot from "@hubspot/api-client"
-// const hubspot = require('@hubspot/api-client')
+// import hubspot from "@hubspot/api-client"
+const hubspot = require('@hubspot/api-client')
 import { hubspotObject } from "./types";
 
 export default class HubspotObjects{
