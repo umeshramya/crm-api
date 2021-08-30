@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "hubspot-crm-api": {
-      "signature": "f5e6e32b09dcdaf44c337ea34db6e817",
-      "file": true
-    }
-  }
-}
