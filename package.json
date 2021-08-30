@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@hubspot/api-client": "^4.1.0",
+    "request": "^2.88.2"
+  },
   "devDependencies": {
+    "@types/request": "^2.48.7",
     "typescript": "^4.4.2"
   },
   "scripts": {
