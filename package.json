@@ -1,0 +1,26 @@
+{
+  "name": "crm-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p .",
+    "dev": "npm run build && yalc publish && cd examples/test && yalc update && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umeshramya/crm-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umeshramya/crm-api/issues"
+  },
+  "homepage": "https://github.com/umeshramya/crm-api#readme"
+}
