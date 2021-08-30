@@ -1,5 +1,5 @@
-import hubspot from "@hubspot/api-client"
-// const hubspot = require('@hubspot/api-client')
+// import hubspot from "@hubspot/api-client"
+const hubspot = require('@hubspot/api-client')
 import { hubspotObject, hubspotOparetor } from "./types";
 
 export default class HubspotObjects{
@@ -88,7 +88,7 @@ export default class HubspotObjects{
     const hubspotClient = new hubspot.Client({ "apiKey": this.hapiKey });
 
     let options = {
-        "filterGroups": [{ "filters": [{ propertyName: config.propertyName, "operator": config.operator, "value": config.value }] }],
+        "filterGroups": [{ "filters": [{ propertyName: config.propertyName, "operator": config.operator as string, "value": config.value }] }],
         "properties": config.properties,
         "limit" : config.limit
 
@@ -98,16 +98,16 @@ export default class HubspotObjects{
      let apiResponse;
      if(config.objects === "contacts"){
          // @ts-ignore
-         await hubspotClient.crm.contacts.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+         apiResponse= await hubspotClient.crm.contacts.searchApi.doSearch(options).then((res:any ) => JSON.parse(JSON.stringify(res.body.results))) 
      }else if(config.objects === "companies"){
-         // @ts-ignore
-         await hubspotClient.crm.companies.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+        // @ts-ignore
+        apiResponse=  await hubspotClient.crm.companies.searchApi.doSearch(options).then((res:any ) => JSON.parse(JSON.stringify(res.body.results))) 
      }else if(config.objects === "deals"){
          // @ts-ignore
-         await hubspotClient.crm.deals.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+         apiResponse= await hubspotClient.crm.deals.searchApi.doSearch(options).then((res: any) => JSON.parse(JSON.stringify(res.body.results))) 
      }else if(config.objects === "tickets"){
          // @ts-ignore
-         await hubspotClient.crm.tickets.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+         apiResponse=  await hubspotClient.crm.tickets.searchApi.doSearch(options).then((res: any) => JSON.parse(JSON.stringify(res.body.results))) 
      }
      return apiResponse;
 

@@ -19,4 +19,26 @@ const creatContact = async ()=>{
     }
 }
 
-creatContact()
+
+
+const getCompany = async ()=>{
+    try {
+        let response = await new HubspotObjects().getByPropertyName({
+            "limit" : 1,
+            "objects" : "companies",
+            "operator" : "EQ",
+            "propertyName" : "orgid",
+            "value" : 1,
+            "properties" : []
+        })
+
+        console.log (response)
+    } catch (error) {
+        
+    }
+}
+
+// creatContact()
+getCompany();
+
+
