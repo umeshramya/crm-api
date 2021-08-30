@@ -1,1 +1,1 @@
-{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../src/hubspot/types.ts"],"names":[],"mappings":"AAAA,aAAK,aAAa,GAAI,UAAU,GAAI,WAAW,GAAG,OAAO,GAAG,SAAS,CAAA;AAErE,YAAY,EAAC,aAAa,EAAC,CAAA"}
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../src/hubspot/types.ts"],"names":[],"mappings":"AAAA,aAAK,aAAa,GAAI,UAAU,GAAI,WAAW,GAAG,OAAO,GAAG,SAAS,CAAA;AACrE,aAAK,eAAe,GAAE,IAAI,GAAE,KAAK,GAAE,IAAI,GAAE,KAAK,GAAE,IAAI,GAAE,KAAK,GAAE,aAAa,GAAE,gBAAgB,GAAE,eAAe,GAAE,kBAAkB,CAAA;AAEjI,YAAY,EAAC,aAAa,EAAE,eAAe,EAAC,CAAA"}

@@ -1,7 +1,6 @@
-// const hubspot = require('@hubspot/api-client');
-// import hubspot from "@hubspot/api-client"
-const hubspot = require('@hubspot/api-client')
-import { hubspotObject } from "./types";
+import hubspot from "@hubspot/api-client"
+// const hubspot = require('@hubspot/api-client')
+import { hubspotObject, hubspotOparetor } from "./types";
 
 export default class HubspotObjects{
     private hapiKey
@@ -79,4 +78,38 @@ export default class HubspotObjects{
                 : console.error(e)
         }
     }
+
+    /**
+     * 
+     * @param config 
+     * @returns 
+     */
+  async getByPropertyName(config : {objects:hubspotObject, propertyName: string, value: any, operator:hubspotOparetor, properties:[], limit:number}): Promise<any> {
+    const hubspotClient = new hubspot.Client({ "apiKey": this.hapiKey });
+
+    let options = {
+        "filterGroups": [{ "filters": [{ propertyName: config.propertyName, "operator": config.operator, "value": config.value }] }],
+        "properties": config.properties,
+        "limit" : config.limit
+
+    }
+
+     // @ts-ignore
+     let apiResponse;
+     if(config.objects === "contacts"){
+         // @ts-ignore
+         await hubspotClient.crm.contacts.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+     }else if(config.objects === "companies"){
+         // @ts-ignore
+         await hubspotClient.crm.companies.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+     }else if(config.objects === "deals"){
+         // @ts-ignore
+         await hubspotClient.crm.deals.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+     }else if(config.objects === "tickets"){
+         // @ts-ignore
+         await hubspotClient.crm.tickets.searchApi.doSearch(options).then((res: { body: { results: any; }; }) => JSON.parse(JSON.stringify(res.body.results))) 
+     }
+     return apiResponse;
+
+}
 }
