@@ -1,5 +1,6 @@
 // const hubspot = require('@hubspot/api-client');
 import hubspot from "@hubspot/api-client"
+import { hubspotObject } from "./types";
 
 export default class HubspotObjects{
     private hapiKey
@@ -7,7 +8,7 @@ export default class HubspotObjects{
         this.hapiKey = hapiKey;
     }
 
-    async create<T>(config:T, objects: "contacts"  | "companies" | "deals" | "tickets"):Promise<any>{
+    async create<T>(config:T, objects: hubspotObject):Promise<any>{
         const hubspotClient = new hubspot.Client({ "apiKey": this.hapiKey });
         const properties= Object.keys(config).map((key)=>{
             // @ts-ignore
@@ -37,5 +38,9 @@ export default class HubspotObjects{
                 ? console.error(JSON.stringify(e.response, null, 2))
                 : console.error(e)
         }
+    }
+
+    async update<T> (config:T, objects:hubspotObject):Promise<any>{
+        
     }
 }
