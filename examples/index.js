@@ -31,14 +31,30 @@ const getCompany = async ()=>{
             "value" : 1,
             "properties" : []
         })
-
+        
         console.log (response)
+        return response;
     } catch (error) {
         
     }
 }
 
+
+
+const update = async ()=>{
+    let companyId = await getCompany().then(res=>res[0].id)
+    try {
+        let response = await new HubspotObjects().update({
+            "name" : "Jeevan Jyoti hospital and Reaserch Center"
+        }, companyId, "companies")
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 // creatContact()
-getCompany();
+
+update()
 
 
