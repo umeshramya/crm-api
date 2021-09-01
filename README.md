@@ -64,4 +64,38 @@ const update = async ()=>{
     }
 }
 update()
+
+```
+
+
+```javascript
+
+// 
+/**
+ * @hs_ticket_category PRODUCT_ISSUE | BILLING_ISSUE | FEATURE_REQUEST | GENERAL_INQUIRY
+ * @hs_ticket_priority LOW | MEDIUM | HIGH
+ */
+const createTicket= async ()=>{
+    try {
+        let response = await new HubspotObjects().create({
+            "hs_pipeline": 0,
+            "hs_pipeline_stage": 1,
+            "hs_ticket_category" : "PRODUCT_ISSUE", 
+            "hs_ticket_priority": "HIGH",
+            "closed_date" : "2021-09-30",
+            "content" : "We want Strong password limition in your software",
+            // "hubspot_owner_id": "910901",
+            "subject": "1 Jeevanjyoti Hospital and research center"
+        }, "tickets")
+
+        console.log(response)
+        
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+createTicket()
+
 ```
