@@ -1,5 +1,5 @@
-import hubspot from "@hubspot/api-client"
-// const hubspot = require('@hubspot/api-client')
+// import hubspot from "@hubspot/api-client"
+const hubspot = require('@hubspot/api-client')
 import { hubspotObject, arrayHubspotObject, hubspotAssocitionType } from "./types";
 
 export default class Associations{
@@ -20,7 +20,7 @@ export default class Associations{
    
             const hubspotClient = new hubspot.Client({"apiKey":this.hapiKey});
 
-            const batchInputPublicAssociation = { inputs: [{"from":{"id": config.fromObjectType},"to":{"id": config.toObjectType},"type":curAssocitionType}] };
+            const batchInputPublicAssociation = { inputs: [{"from":{"id": config.fromObjectId},"to":{"id": config.toObjectId},"type":curAssocitionType}] };
             const fromObjectType = config.fromObjectType;
             const toObjectType = config.toObjectType;
 

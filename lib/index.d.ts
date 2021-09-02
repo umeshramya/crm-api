@@ -1,3 +1,4 @@
 import HubspotObjects from "./hubspot/hubspot-objects";
-export { HubspotObjects };
+import Associations from "./hubspot/associations";
+export { HubspotObjects, Associations };
 //# sourceMappingURL=index.d.ts.map

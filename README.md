@@ -99,3 +99,24 @@ const createTicket= async ()=>{
 createTicket()
 
 ```
+
+
+## Associations
+```javascript
+const createAssociation = async()=>{
+    let companyId = "4797123787"
+    let ticketid = "467217102"
+
+    const response = await new Associations().create({
+        "fromObjectId" : ticketid,
+        "fromObjectType" : "tickets",
+
+        "toObjectId" : companyId,
+        "toObjectType" : "companies"
+    })
+
+    console.log(response)
+}
+
+createAssociation()
+```

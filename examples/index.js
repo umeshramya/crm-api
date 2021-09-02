@@ -1,4 +1,4 @@
-const {HubspotObjects} = require("hubspot-crm-api")
+const {HubspotObjects, Associations} = require("hubspot-crm-api")
 const dotEnv = require("dotenv").config()
 
 const creatContact = async ()=>{
@@ -39,7 +39,7 @@ const getCompany = async ()=>{
     }
 }
 
-getCompany()
+// getCompany()
 
 const update = async ()=>{
     let companyId = await getCompany().then(res=>res[0].id)
@@ -80,7 +80,13 @@ const createTicket= async ()=>{
             "subject": "1 Jeevanjyoti Hospital and research center"
         }, "tickets")
 
+        console.log(response)
+
+
+
         let ticketid = JSON.parse(JSON.stringify(response)).id
+
+    
 
         
     } catch (error) {
@@ -92,4 +98,19 @@ const createTicket= async ()=>{
 // createTicket()
 
 
+const createAssociation = async()=>{
+    let companyId = "4797123787"
+    let ticketid = "467217102"
 
+    const response = await new Associations().create({
+        "fromObjectId" : ticketid,
+        "fromObjectType" : "tickets",
+
+        "toObjectId" : companyId,
+        "toObjectType" : "companies"
+    })
+
+    console.log(response)
+}
+
+createAssociation()
