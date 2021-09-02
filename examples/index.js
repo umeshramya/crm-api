@@ -39,7 +39,7 @@ const getCompany = async ()=>{
     }
 }
 
-
+getCompany()
 
 const update = async ()=>{
     let companyId = await getCompany().then(res=>res[0].id)
@@ -80,7 +80,8 @@ const createTicket= async ()=>{
             "subject": "1 Jeevanjyoti Hospital and research center"
         }, "tickets")
 
-        console.log(response)
+        let ticketid = JSON.parse(JSON.stringify(response)).id
+
         
     } catch (error) {
         console.log(error)
@@ -88,6 +89,7 @@ const createTicket= async ()=>{
 
 }
 
-createTicket()
+// createTicket()
+
 
 
