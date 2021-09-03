@@ -16,7 +16,6 @@ export default class Associations{
     }):Promise<any>{
 
             const curAssocitionType = `${arrayHubspotObject.filter(el=> el.type === config.fromObjectType)[0].single}_to_${arrayHubspotObject.filter(el=> el.type === config.toObjectType)[0].single}`
-            console.log(curAssocitionType)
    
             const hubspotClient = new hubspot.Client({"apiKey":this.hapiKey});
 
