@@ -23,11 +23,9 @@ export default class Associations{
             const batchInputPublicAssociation = { inputs: [{"from":{"id": config.fromObjectId},"to":{"id": config.toObjectId},"type":curAssocitionType}] };
             const fromObjectType = config.fromObjectType;
             const toObjectType = config.toObjectType;
-
-       
                 try {
                 const apiResponse = await hubspotClient.crm.associations.batchApi.create(fromObjectType, toObjectType, batchInputPublicAssociation);
-                console.log(JSON.stringify(apiResponse.body, null, 2));
+                
                 } catch (e:any) {
                 e.message === 'HTTP request failed'
                     ? console.error(JSON.stringify(e.response, null, 2))
