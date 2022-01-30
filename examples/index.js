@@ -19,6 +19,8 @@ const creatContact = async ()=>{
     }
 }
 
+// creatContact()
+
 
 
 const getCompany = async ()=>{
@@ -39,7 +41,7 @@ const getCompany = async ()=>{
     }
 }
 
-// getCompany()
+getCompany()
 
 const update = async ()=>{
     let companyId = await getCompany().then(res=>res[0].id)
@@ -113,4 +115,4 @@ const createAssociation = async()=>{
     console.log(response)
 }
 
-createAssociation()
+// createAssociation()

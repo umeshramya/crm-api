@@ -21,20 +21,20 @@ export default class HubspotObjects{
       
         const simplePublicObjectInput = { properties };
         try {
-            // @ts-ignore
+        
             let apiResponse;
             if(objects === "contacts"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.contacts.basicApi.create(simplePublicObjectInput).then(res => res.body);
+             
+                apiResponse = await hubspotClient.crm.contacts.basicApi.create(simplePublicObjectInput).then((res:any) => res.body);
             }else if(objects === "companies"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.companies.basicApi.create(simplePublicObjectInput).then(res => res.body);
+                
+                apiResponse = await hubspotClient.crm.companies.basicApi.create(simplePublicObjectInput).then((res:any) => res.body);
             }else if(objects === "deals"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.deals.basicApi.create(simplePublicObjectInput).then(res => res.body);
+            
+                apiResponse = await hubspotClient.crm.deals.basicApi.create(simplePublicObjectInput).then((res:any) => res.body);
             }else if(objects === "tickets"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.tickets.basicApi.create(simplePublicObjectInput).then(res => res.body);
+            
+                apiResponse = await hubspotClient.crm.tickets.basicApi.create(simplePublicObjectInput).then((res:any) => res.body);
             }
             return apiResponse;
         } catch (e:any) {
@@ -56,20 +56,20 @@ export default class HubspotObjects{
       
         const simplePublicObjectInput = { properties };
         try {
-            // @ts-ignore
+            
             let apiResponse;
             if(objects === "contacts"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.contacts.basicApi.update(id,simplePublicObjectInput).then(res => res.body);
+                
+                apiResponse = await hubspotClient.crm.contacts.basicApi.update(id,simplePublicObjectInput).then((res:any) => res.body);
             }else if(objects === "companies"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.companies.basicApi.update(id,simplePublicObjectInput).then(res => res.body);
+                
+                apiResponse = await hubspotClient.crm.companies.basicApi.update(id,simplePublicObjectInput).then((res:any) => res.body);
             }else if(objects === "deals"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.deals.basicApi.update(id,simplePublicObjectInput).then(res => res.body);
+                
+                apiResponse = await hubspotClient.crm.deals.basicApi.update(id,simplePublicObjectInput).then((res:any) => res.body);
             }else if(objects === "tickets"){
-                // @ts-ignore
-                apiResponse = await hubspotClient.crm.tickets.basicApi.update(id, simplePublicObjectInput).then(res => res.body);
+                
+                apiResponse = await hubspotClient.crm.tickets.basicApi.update(id, simplePublicObjectInput).then((res:any) => res.body);
             }
             return apiResponse;
         } catch (e:any) {
