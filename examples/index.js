@@ -9,7 +9,7 @@ const creatContact = async ()=>{
             "lastname": "Patil",
             "phone": "9243603720",
             "jobtitle": "admin",
-            "userid": "2",
+            // "userid": "2",
             "lifecyclestage": "customer"
         }, "contacts")
         console.log(response)
@@ -19,7 +19,7 @@ const creatContact = async ()=>{
     }
 }
 
-// creatContact()
+creatContact()
 
 
 

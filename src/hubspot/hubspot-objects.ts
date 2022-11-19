@@ -10,7 +10,7 @@ export default class HubspotObjects{
 
     async create(config:any  , objects: hubspotObject):Promise<any>{
         
-        const hubspotClient = new hubspot.Client({ "apiKey": this.hapiKey });
+        const hubspotClient = new hubspot.Client({ accessToken:this.hapiKey});
 
         const properties = {}
         Object.keys(config).map((key)=>{
@@ -45,7 +45,7 @@ export default class HubspotObjects{
     }
 
     async update (config:any, id:any ,objects:hubspotObject):Promise<any>{
-        const hubspotClient = new hubspot.Client({ "apiKey": this.hapiKey });
+        const hubspotClient = new hubspot.Client({ accessToken:this.hapiKey});
 
         const properties = {}
         Object.keys(config).map((key)=>{
@@ -85,7 +85,7 @@ export default class HubspotObjects{
      * @returns 
      */
   async getByPropertyName(config : {objects:hubspotObject, propertyName: string, value: any, operator:hubspotOparetor, properties:[], limit:number}): Promise<any> {
-    const hubspotClient = new hubspot.Client({ "apiKey": this.hapiKey });
+    const hubspotClient = new hubspot.Client({ accessToken:this.hapiKey});
 
     let options = {
         "filterGroups": [{ "filters": [{ propertyName: config.propertyName, "operator": config.operator as string, "value": config.value }] }],

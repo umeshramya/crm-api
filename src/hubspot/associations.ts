@@ -17,7 +17,7 @@ export default class Associations{
 
             const curAssocitionType = `${arrayHubspotObject.filter(el=> el.type === config.fromObjectType)[0].single}_to_${arrayHubspotObject.filter(el=> el.type === config.toObjectType)[0].single}`
    
-            const hubspotClient = new hubspot.Client({"apiKey":this.hapiKey});
+            const hubspotClient = new hubspot.Client({ accessToken:this.hapiKey});
 
             const batchInputPublicAssociation = { inputs: [{"from":{"id": config.fromObjectId},"to":{"id": config.toObjectId},"type":curAssocitionType}] };
             const fromObjectType = config.fromObjectType;

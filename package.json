@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "dependencies": {
-    "@hubspot/api-client": "^4.1.0",
+    "@hubspot/api-client": "^7.1.2",
     "request": "^2.88.2"
   },
   "devDependencies": {
