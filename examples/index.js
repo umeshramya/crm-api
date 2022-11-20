@@ -34,7 +34,7 @@ const getCompany = async ()=>{
             "properties" : []
         })
         
-        console.log (response)
+        console.log ("response")
         return response;
     } catch (error) {
         
