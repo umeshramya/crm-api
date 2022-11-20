@@ -27,14 +27,14 @@ const getCompany = async ()=>{
     try {
         let response = await new HubspotObjects().getByPropertyName({
             "limit" : 1,
-            "objects" : "companies",
+            "objects" : "contacts",
             "operator" : "EQ",
-            "propertyName" : "orgid",
-            "value" : 1,
+            "propertyName" : "firstname",
+            "value" : "Umesh",
             "properties" : []
         })
         
-        console.log ("response")
+        console.log ("response", response)
         return response;
     } catch (error) {
         

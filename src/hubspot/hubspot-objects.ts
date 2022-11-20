@@ -34,7 +34,7 @@ export default class HubspotObjects {
       } else if (objects === "deals") {
         uri = `https://api.hubapi.com/crm/v3/objects/deals`;
       } else if (objects === "tickets") {
-        uri = "https://api.hubapi.com/crm/v3/objects/deals";
+        uri = "https://api.hubapi.com/crm/v3/objects/tickets";
       }
       apiResponse = await axios
         .post(uri, config, this.header)
@@ -65,7 +65,7 @@ export default class HubspotObjects {
       } else if (objects === "deals") {
         uri = `https://api.hubapi.com/crm/v3/objects/deals`;
       } else if (objects === "tickets") {
-        uri = "https://api.hubapi.com/crm/v3/objects/deals";
+        uri = "https://api.hubapi.com/crm/v3/objects/tickets";
       }
       apiResponse = await axios
         .patch(uri, config, this.header)
@@ -108,6 +108,32 @@ export default class HubspotObjects {
       limit: config.limit,
     };
 
+    // let options={
+    //   "filterGroups": [
+    //     {
+    //       "filters": [
+    //         {
+    //           "value": "string",
+    //           "values": [
+    //             "string"
+    //           ],
+    //           "propertyName": "string",
+    //           "operator": "EQ"
+    //         }
+    //       ]
+    //     }
+    //   ],
+    //   "sorts": [
+    //     "string"
+    //   ],
+    //   "query": "string",
+    //   "properties": [
+    //     "string"
+    //   ],
+    //   "limit": 0,
+    //   "after": 0
+    // }
+
     let uri = "";
     let apiResponse;
     if (config.objects === "contacts") {
@@ -117,7 +143,7 @@ export default class HubspotObjects {
     } else if (config.objects === "deals") {
       uri = `https://api.hubapi.com/crm/v3/objects/deals/search`;
     } else if (config.objects === "tickets") {
-      uri = "https://api.hubapi.com/crm/v3/objects/deals/search";
+      uri = "https://api.hubapi.com/crm/v3/objects/tickets/search";
     }
     apiResponse = await axios
       .post(uri, options, this.header)
