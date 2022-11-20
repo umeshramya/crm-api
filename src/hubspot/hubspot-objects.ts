@@ -17,9 +17,8 @@ export default class HubspotObjects {
   }
 
   async create(config: any, objects: hubspotObject): Promise<any> {
-    const properties = {};
+    const properties:any = {};
     Object.keys(config).map((key) => {
-      //@ts-ignore
       properties[key] = config[`${key}`];
     });
 
@@ -34,10 +33,10 @@ export default class HubspotObjects {
       } else if (objects === "deals") {
         uri = `https://api.hubapi.com/crm/v3/objects/deals`;
       } else if (objects === "tickets") {
-        uri = "https://api.hubapi.com/crm/v3/objects/tickets";
+        uri = `https://api.hubapi.com/crm/v3/objects/tickets`;
       }
       apiResponse = await axios
-        .post(uri, config, this.header)
+        .post(uri, simplePublicObjectInput, this.header)
         .then((res) => res.data);
       return apiResponse;
     } catch (e: any) {
@@ -48,9 +47,8 @@ export default class HubspotObjects {
   }
 
   async update(config: any, id: any, objects: hubspotObject): Promise<any> {
-    const properties = {};
+    const properties:any = {};
     Object.keys(config).map((key) => {
-      //@ts-ignore
       properties[key] = config[`${key}`];
     });
 
@@ -68,7 +66,7 @@ export default class HubspotObjects {
         uri = "https://api.hubapi.com/crm/v3/objects/tickets";
       }
       apiResponse = await axios
-        .patch(uri, config, this.header)
+        .patch(uri, simplePublicObjectInput, this.header)
         .then((res) => res.data);
       return apiResponse;
     } catch (e: any) {

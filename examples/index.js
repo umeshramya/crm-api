@@ -4,7 +4,7 @@ const dotEnv = require("dotenv").config()
 const creatContact = async ()=>{
     try {
         let response = await new HubspotObjects().create({
-            "email": "umesh@gmail.com",
+            "email": "umeshbilagi@gmail.com",
             "firstname": "Umesh",
             "lastname": "Patil",
             "phone": "9243603720",
@@ -19,7 +19,7 @@ const creatContact = async ()=>{
     }
 }
 
-// creatContact()
+creatContact()
 // 
 
 
@@ -27,10 +27,10 @@ const getCompany = async ()=>{
     try {
         let response = await new HubspotObjects().getByPropertyName({
             "limit" : 1,
-            "objects" : "contacts",
+            "objects" : "companies",
             "operator" : "EQ",
-            "propertyName" : "firstname",
-            "value" : "Umesh",
+            "propertyName" : "orgid",
+            "value" : 1,
             "properties" : []
         })
         
@@ -41,7 +41,7 @@ const getCompany = async ()=>{
     }
 }
 
-getCompany()
+// getCompany()
 
 const update = async ()=>{
     let companyId = await getCompany().then(res=>res[0].id)
