@@ -24,6 +24,19 @@ const creatContact = async () => {
 // creatContact()
 //
 
+const createCompany = async()=>{
+  let response = await new HubspotObjects().create({
+    "city": "Cambridge",
+    "domain": "biglytics.net",
+    "industry": "Technology",
+    "name": "Biglytics",
+    "phone": "(877) 929-0687",
+    "state": "Massachusetts"
+  }, "companies")
+}
+
+createCompany()
+
 const getCompany = async () => {
   try {
     let response = await new HubspotObjects().getByPropertyName({
@@ -110,4 +123,4 @@ const createAssociation = async () => {
   console.log(response);
 };
 
-createAssociation()
+// createAssociation()
